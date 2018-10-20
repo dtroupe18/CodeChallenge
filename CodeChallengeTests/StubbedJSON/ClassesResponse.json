@@ -1,0 +1,561 @@
+[
+{
+"id": 10527,
+"instructor_id": 2,
+"audio_id": 10436,
+"name": "H-I-L-L-S Party",
+"background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/hiinduranceseason2-se.jpg",
+"publish_date": "2018-10-12T16:00:00Z",
+"duration": "00:20:00",
+"difficulty": "B",
+"description": null,
+"is_welcome_run": false,
+"type": "H",
+"music_genre": "T4",
+"equipment": "O",
+"users_took": 1,
+"instructor": {
+"id": 2,
+"name": "Justin Koodish",
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/justin-avatar.jpg"
+},
+"audio": {
+"id": 10436,
+"name": "HIIT Full Body Weights",
+"url": "http://d5zkvy4kn72kp.cloudfront.net/bakari-hiitfullbodyweights/index.m3u8"
+},
+"top_users": [
+{
+"id": 80483,
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/016.jpg"
+}
+],
+"workout_session": null,
+"weights": null,
+"is_bookmarked": false
+},
+{
+"id": 10526,
+"instructor_id": 6,
+"audio_id": 10436,
+"name": "CMS YES",
+"background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/hiitfullbodyoctober-se.jpg",
+"publish_date": "2018-10-06T16:00:00Z",
+"duration": "00:30:00",
+"difficulty": "I",
+"description": null,
+"is_welcome_run": false,
+"type": "I",
+"music_genre": "HH",
+"equipment": "T",
+"users_took": 2,
+"instructor": {
+"id": 6,
+"name": "Bakari Williams",
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/bakari-avatar-318.jpg"
+},
+"audio": {
+"id": 10436,
+"name": "HIIT Full Body Weights",
+"url": "http://d5zkvy4kn72kp.cloudfront.net/bakari-hiitfullbodyweights/index.m3u8"
+},
+"top_users": [
+{
+"id": 80482,
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/009.jpg"
+},
+{
+"id": 22,
+"avatar_url": "https://graph.facebook.com/10103172450181307/picture?type=large"
+}
+],
+"workout_session": null,
+"weights": null,
+"is_bookmarked": false
+},
+{
+"id": 10523,
+"instructor_id": 14,
+"audio_id": 10435,
+"name": "test time 123",
+"background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/afrobeat-se.jpg",
+"publish_date": "2018-09-22T16:05:00Z",
+"duration": "00:20:00",
+"difficulty": "A",
+"description": null,
+"is_welcome_run": false,
+"type": "S",
+"music_genre": "HH",
+"equipment": "T",
+"users_took": 9,
+"instructor": {
+"id": 14,
+"name": "Aaron Albert",
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/aaron-avatar-318.jpg"
+},
+"audio": {
+"id": 10435,
+"name": "Outdoor",
+"url": "http://d5zkvy4kn72kp.cloudfront.net/selena-outdoor831/index.m3u8"
+},
+"top_users": [
+{
+"id": 80452,
+"avatar_url": "https://graph.facebook.com/113640889467958/picture?type=large"
+},
+{
+"id": 80445,
+"avatar_url": "https://graph.facebook.com/10154364655072120/picture?type=large"
+},
+{
+"id": 21,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/crediblehulk.jpg"
+},
+{
+"id": 20,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/ifoundnemo.jpg"
+}
+],
+"workout_session": {
+"id": 292964,
+"workout_id": 10523,
+"user_id": 80452,
+"filename": "workout-10523-292964.json",
+"log_url_path": "http://d27zjyne0l1spy.cloudfront.net/2018-10-20/10523/workout-10523-292964.json",
+"max_distance": 0,
+"max_heart_rate": 81,
+"max_speed": 0,
+"points": 90,
+"slug": "d1ca97d8faeb9fd7f1ee739fad54f510",
+"duration": "00:03:45",
+"created_at": "2018-10-19T23:59:24Z"
+},
+"weights": [
+{
+"id": 110,
+"workout_id": 10523,
+"type": "L",
+"how_many": 1,
+"created_at": "2018-09-19T16:11:35Z"
+},
+{
+"id": 109,
+"workout_id": 10523,
+"type": "M",
+"how_many": 1,
+"created_at": "2018-09-19T16:11:35Z"
+},
+{
+"id": 108,
+"workout_id": 10523,
+"type": "H",
+"how_many": 1,
+"created_at": "2018-09-19T16:11:35Z"
+}
+],
+"is_bookmarked": false
+},
+{
+"id": 10519,
+"instructor_id": 10,
+"audio_id": 10436,
+"name": "weights iii",
+"background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/hiphopintervals2selenasept-se.jpg",
+"publish_date": "2018-09-20T16:05:00Z",
+"duration": "00:30:00",
+"difficulty": "A",
+"description": null,
+"is_welcome_run": false,
+"type": "I",
+"music_genre": "AT",
+"equipment": "T",
+"users_took": 6,
+"instructor": {
+"id": 10,
+"name": "Megan Peterson",
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/megan-avatar.jpg"
+},
+"audio": {
+"id": 10436,
+"name": "HIIT Full Body Weights",
+"url": "http://d5zkvy4kn72kp.cloudfront.net/bakari-hiitfullbodyweights/index.m3u8"
+},
+"top_users": [
+{
+"id": 21,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/crediblehulk.jpg"
+},
+{
+"id": 20,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/ifoundnemo.jpg"
+},
+{
+"id": 19,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/namaste-1.jpg"
+},
+{
+"id": 18,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/laxrunner.jpg"
+}
+],
+"workout_session": null,
+"weights": [
+{
+"id": 86,
+"workout_id": 10519,
+"type": "L",
+"how_many": 1,
+"created_at": "2018-09-18T19:37:24Z"
+},
+{
+"id": 85,
+"workout_id": 10519,
+"type": "M",
+"how_many": 1,
+"created_at": "2018-09-18T19:37:24Z"
+},
+{
+"id": 84,
+"workout_id": 10519,
+"type": "H",
+"how_many": 2,
+"created_at": "2018-09-18T19:37:24Z"
+}
+],
+"is_bookmarked": false
+},
+{
+"id": 10412,
+"instructor_id": 14,
+"audio_id": 10389,
+"name": "rrrrrr",
+"background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/hiphopintervals2selenasept-se.jpg",
+"publish_date": "2018-09-20T16:00:00Z",
+"duration": "00:20:00",
+"difficulty": "I",
+"description": null,
+"is_welcome_run": false,
+"type": "I",
+"music_genre": "HH",
+"equipment": "O",
+"users_took": 42,
+"instructor": {
+"id": 14,
+"name": "Aaron Albert",
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/aaron-avatar-318.jpg"
+},
+"audio": {
+"id": 10389,
+"name": "Party Run ",
+"url": "http://d5zkvy4kn72kp.cloudfront.net/adam-partyrun/index.m3u8"
+},
+"top_users": [
+{
+"id": 72457,
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/021.jpg"
+},
+{
+"id": 63196,
+"avatar_url": "https://graph.facebook.com/10211770614077819/picture?type=large"
+},
+{
+"id": 63193,
+"avatar_url": "https://graph.facebook.com/10211938830170675/picture?type=large"
+},
+{
+"id": 59287,
+"avatar_url": "https://graph.facebook.com/10106247102193955/picture?type=large"
+}
+],
+"workout_session": null,
+"weights": null,
+"is_bookmarked": false
+},
+{
+"id": 10522,
+"instructor_id": 14,
+"audio_id": 10436,
+"name": "ddddddddd",
+"background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/hiitaaron1sept-se.jpg",
+"publish_date": "2018-09-19T16:05:00Z",
+"duration": "00:15:00",
+"difficulty": "B",
+"description": null,
+"is_welcome_run": false,
+"type": "H",
+"music_genre": "HH",
+"equipment": "O",
+"users_took": 6,
+"instructor": {
+"id": 14,
+"name": "Aaron Albert",
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/aaron-avatar-318.jpg"
+},
+"audio": {
+"id": 10436,
+"name": "HIIT Full Body Weights",
+"url": "http://d5zkvy4kn72kp.cloudfront.net/bakari-hiitfullbodyweights/index.m3u8"
+},
+"top_users": [
+{
+"id": 21,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/crediblehulk.jpg"
+},
+{
+"id": 20,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/ifoundnemo.jpg"
+},
+{
+"id": 19,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/namaste-1.jpg"
+},
+{
+"id": 18,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/laxrunner.jpg"
+}
+],
+"workout_session": null,
+"weights": [
+{
+"id": 101,
+"workout_id": 10522,
+"type": "L",
+"how_many": 1,
+"created_at": "2018-09-18T20:02:47Z"
+},
+{
+"id": 100,
+"workout_id": 10522,
+"type": "M",
+"how_many": 1,
+"created_at": "2018-09-18T20:02:47Z"
+},
+{
+"id": 99,
+"workout_id": 10522,
+"type": "H",
+"how_many": 1,
+"created_at": "2018-09-18T20:02:47Z"
+}
+],
+"is_bookmarked": false
+},
+{
+"id": 10521,
+"instructor_id": 13,
+"audio_id": 10435,
+"name": "asdfghjkl",
+"background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/hiitaaron1sept-se.jpg",
+"publish_date": "2018-09-19T16:05:00Z",
+"duration": "00:30:00",
+"difficulty": "A",
+"description": null,
+"is_welcome_run": false,
+"type": "I",
+"music_genre": "ED",
+"equipment": "O",
+"users_took": 6,
+"instructor": {
+"id": 13,
+"name": "Mike Press",
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/mike-avatar-318.jpg"
+},
+"audio": {
+"id": 10435,
+"name": "Outdoor",
+"url": "http://d5zkvy4kn72kp.cloudfront.net/selena-outdoor831/index.m3u8"
+},
+"top_users": [
+{
+"id": 21,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/crediblehulk.jpg"
+},
+{
+"id": 20,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/ifoundnemo.jpg"
+},
+{
+"id": 19,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/namaste-1.jpg"
+},
+{
+"id": 18,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/laxrunner.jpg"
+}
+],
+"workout_session": null,
+"weights": null,
+"is_bookmarked": false
+},
+{
+"id": 10520,
+"instructor_id": 15,
+"audio_id": 10436,
+"name": "TEST TEST TES",
+"background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/hiitaaron1sept-se.jpg",
+"publish_date": "2018-09-19T16:05:00Z",
+"duration": "00:15:00",
+"difficulty": "I",
+"description": null,
+"is_welcome_run": false,
+"type": "S",
+"music_genre": "R",
+"equipment": "O",
+"users_took": 6,
+"instructor": {
+"id": 15,
+"name": "Emma Jane",
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/emma-avatar.jpg"
+},
+"audio": {
+"id": 10436,
+"name": "HIIT Full Body Weights",
+"url": "http://d5zkvy4kn72kp.cloudfront.net/bakari-hiitfullbodyweights/index.m3u8"
+},
+"top_users": [
+{
+"id": 21,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/crediblehulk.jpg"
+},
+{
+"id": 20,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/ifoundnemo.jpg"
+},
+{
+"id": 19,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/namaste-1.jpg"
+},
+{
+"id": 18,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/laxrunner.jpg"
+}
+],
+"workout_session": null,
+"weights": [
+{
+"id": 92,
+"workout_id": 10520,
+"type": "H",
+"how_many": 2,
+"created_at": "2018-09-18T19:59:50Z"
+}
+],
+"is_bookmarked": false
+},
+{
+"id": 10517,
+"instructor_id": 14,
+"audio_id": 10436,
+"name": "testing weights",
+"background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/backoutsidelisa-se.jpg",
+"publish_date": "2018-09-19T16:00:00Z",
+"duration": "01:00:00",
+"difficulty": "I",
+"description": null,
+"is_welcome_run": false,
+"type": "I",
+"music_genre": "HH",
+"equipment": "O",
+"users_took": 6,
+"instructor": {
+"id": 14,
+"name": "Aaron Albert",
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/aaron-avatar-318.jpg"
+},
+"audio": {
+"id": 10436,
+"name": "HIIT Full Body Weights",
+"url": "http://d5zkvy4kn72kp.cloudfront.net/bakari-hiitfullbodyweights/index.m3u8"
+},
+"top_users": [
+{
+"id": 21,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/crediblehulk.jpg"
+},
+{
+"id": 20,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/ifoundnemo.jpg"
+},
+{
+"id": 19,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/namaste-1.jpg"
+},
+{
+"id": 18,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/laxrunner.jpg"
+}
+],
+"workout_session": null,
+"weights": null,
+"is_bookmarked": false
+},
+{
+"id": 10429,
+"instructor_id": 1,
+"audio_id": 10389,
+"name": "test date tz",
+"background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/hiitandabssculpt-se.jpg",
+"publish_date": "2018-09-17T19:00:00Z",
+"duration": "00:10:00",
+"difficulty": "B",
+"description": null,
+"is_welcome_run": false,
+"type": "E",
+"music_genre": "T4",
+"equipment": "T",
+"users_took": 6,
+"instructor": {
+"id": 1,
+"name": "William Myers",
+"avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/will-avatar.jpg"
+},
+"audio": {
+"id": 10389,
+"name": "Party Run ",
+"url": "http://d5zkvy4kn72kp.cloudfront.net/adam-partyrun/index.m3u8"
+},
+"top_users": [
+{
+"id": 21,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/crediblehulk.jpg"
+},
+{
+"id": 20,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/ifoundnemo.jpg"
+},
+{
+"id": 19,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/namaste-1.jpg"
+},
+{
+"id": 18,
+"avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/laxrunner.jpg"
+}
+],
+"workout_session": null,
+"weights": [
+{
+"id": 19,
+"workout_id": 10429,
+"type": "L",
+"how_many": 1,
+"created_at": "2018-09-18T17:28:34Z"
+},
+{
+"id": 18,
+"workout_id": 10429,
+"type": "M",
+"how_many": 2,
+"created_at": "2018-09-18T17:28:34Z"
+},
+{
+"id": 17,
+"workout_id": 10429,
+"type": "H",
+"how_many": 1,
+"created_at": "2018-09-18T17:28:34Z"
+}
+],
+"is_bookmarked": false
+}
+]

@@ -1,0 +1,20 @@
+PODS:
+  - Anchorage (4.2.4)
+  - Kingfisher (4.10.0)
+
+DEPENDENCIES:
+  - Anchorage
+  - Kingfisher (~> 4.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Anchorage
+    - Kingfisher
+
+SPEC CHECKSUMS:
+  Anchorage: f855157310859280c706cc0b9c9281c21702f515
+  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
+
+PODFILE CHECKSUM: 36bebd542a62db01d055ce3f895687db3de528dc
+
+COCOAPODS: 1.5.3
