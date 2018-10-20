@@ -17,6 +17,7 @@ class WorkoutCell: UITableViewCell {
     
     let workNameLabel = UILabel()
     let instructorNameLabel = UILabel()
+    let idLabel = UILabel() // for debug purposes only
     
     // let durationLabel = UILabel()
     
@@ -55,6 +56,13 @@ class WorkoutCell: UITableViewCell {
         instructorNameLabel.leftAnchor == instructorImageView.rightAnchor + 8
         instructorNameLabel.rightAnchor == rightAnchor
         instructorNameLabel.centerYAnchor == instructorImageView.centerYAnchor
+        
+        containerView.addSubview(idLabel)
+        idLabel.heightAnchor == 16
+        idLabel.font = UIFont.systemFont(ofSize: 8)
+        idLabel.text = "\(workout.id)"
+        idLabel.rightAnchor == containerView.rightAnchor - 8
+        idLabel.bottomAnchor == containerView.bottomAnchor - 8
         
         self.selectionStyle = .none
     }

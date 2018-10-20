@@ -22,6 +22,8 @@
 		55F314E5217BC96000027EB6 /* LeaderBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F314E4217BC96000027EB6 /* LeaderBoardViewController.swift */; };
 		55F314E7217BCB5500027EB6 /* LeaderboardResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 55F314E6217BCB5500027EB6 /* LeaderboardResponse.json */; };
 		55F314E9217BCC7C00027EB6 /* LeaderboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F314E8217BCC7C00027EB6 /* LeaderboardResponse.swift */; };
+		55F314EB217BD34200027EB6 /* 10527.json in Resources */ = {isa = PBXBuildFile; fileRef = 55F314EA217BD34200027EB6 /* 10527.json */; };
+		55F314ED217BD43300027EB6 /* 10523.json in Resources */ = {isa = PBXBuildFile; fileRef = 55F314EC217BD43300027EB6 /* 10523.json */; };
 		7A26D2C9DA2FF2FCFC9EDDDC /* Pods_CodeChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78FB8BF628E69F6F2324141A /* Pods_CodeChallengeTests.framework */; };
 		E2D70A8B0C17D1B8194099F4 /* Pods_CodeChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B533474CB8EBA9F474DE3BC /* Pods_CodeChallenge.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +67,8 @@
 		55F314E4217BC96000027EB6 /* LeaderBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardViewController.swift; sourceTree = "<group>"; };
 		55F314E6217BCB5500027EB6 /* LeaderboardResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LeaderboardResponse.json; sourceTree = "<group>"; };
 		55F314E8217BCC7C00027EB6 /* LeaderboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardResponse.swift; sourceTree = "<group>"; };
+		55F314EA217BD34200027EB6 /* 10527.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 10527.json; sourceTree = "<group>"; };
+		55F314EC217BD43300027EB6 /* 10523.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 10523.json; sourceTree = "<group>"; };
 		78FB8BF628E69F6F2324141A /* Pods_CodeChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B533474CB8EBA9F474DE3BC /* Pods_CodeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEFDA0C2B2DF976C5C7945FF /* Pods-CodeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,7 +141,6 @@
 				55F314C7217B70F300027EB6 /* API */,
 				55F314DA217BB23400027EB6 /* Supporting Files */,
 				55F314A5217A926D00027EB6 /* Info.plist */,
-				55F314E6217BCB5500027EB6 /* LeaderboardResponse.json */,
 			);
 			path = CodeChallenge;
 			sourceTree = "<group>";
@@ -190,6 +193,9 @@
 		55F314D5217BAF1F00027EB6 /* StubbedJSON */ = {
 			isa = PBXGroup;
 			children = (
+				55F314EC217BD43300027EB6 /* 10523.json */,
+				55F314EA217BD34200027EB6 /* 10527.json */,
+				55F314E6217BCB5500027EB6 /* LeaderboardResponse.json */,
 				55F314D6217BAF3A00027EB6 /* ClassesResponse.json */,
 			);
 			path = StubbedJSON;
@@ -358,8 +364,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F314ED217BD43300027EB6 /* 10523.json in Resources */,
 				55F314E7217BCB5500027EB6 /* LeaderboardResponse.json in Resources */,
 				55F314D7217BAF3A00027EB6 /* ClassesResponse.json in Resources */,
+				55F314EB217BD34200027EB6 /* 10527.json in Resources */,
 				55F314A4217A926D00027EB6 /* LaunchScreen.storyboard in Resources */,
 				55F314A1217A926D00027EB6 /* Assets.xcassets in Resources */,
 			);

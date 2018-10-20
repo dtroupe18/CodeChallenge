@@ -1,0 +1,39 @@
+[
+    {
+        "id": 292937,
+        "workout_id": 10527,
+        "user_id": 80483,
+        "filename": "workout-10527-292937.json",
+        "log_url_path": "http://d27zjyne0l1spy.cloudfront.net/2018-10-15/10527/workout-10527-292937.json",
+        "max_distance": 0.006487115246959213,
+        "max_heart_rate": 86,
+        "max_speed": 0,
+        "max_heart_rate_age": 191,
+        "heart_rate_percentage": 45,
+        "points": 113,
+        "slug": "e0b62c0557318263692b2ade175066f4",
+        "user": {
+            "id": 80483,
+            "username": "richcouzzi",
+            "email": "rich+couzzi@studio.live",
+            "birthday": "1989-10-15",
+            "age": 29,
+            "gender": "F",
+            "location": "",
+            "weight": 0,
+            "subscription": "live.studio.ios.YearlyFullService",
+            "subscription_data": null,
+            "why_running_with": null,
+            "onboarding_finished": false,
+            "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/016.jpg",
+            "fb_user_id": null,
+            "fb_data": null,
+            "token": null,
+            "label": null,
+            "workout_sessions_count": 0,
+            "created_at": "2018-10-15T15:32:00Z",
+            "ranking": null
+        },
+        "created_at": "2018-10-15T19:33:02Z"
+    }
+]

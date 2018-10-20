@@ -11,45 +11,35 @@ import UIKit
 class LeaderBoardViewController: UITableViewController {
     
     private var leaderboardUsers = [LeaderboardUser]()
-    
     private final let cellIdentifier: String = "leaderboardCell"
+    private let workoutId: Int
+    
+    init(workoutId: Int) {
+        self.workoutId = workoutId
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
         
-        // Make the API call to get available workouts!
-//        RequestManager.shared.getWorkouts(workoutArrray: { [weak self] workoutArray in
-//            // self?.workouts = workoutArray
-//            // self?.tableView.reloadData()
-//            }, onError: { error in
-//                print("error: \(error.localizedDescription)")
-//        })
+        // Make API call to get leaderboard response
+        RequestManager.shared.getLeaderboard(forWorkoutId: workoutId, success: { [weak self] leaderBoardUserArray in
+            self?.leaderboardUsers = leaderBoardUserArray
+            self?.tableView.reloadData()
+        }, onError: { error in
+            print("Leaderboard Error: \(error.localizedDescription)")
+        })
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-        loadDataFromJson()
-    }
-    
-    private func loadDataFromJson() {
-        let bundle: Bundle = Bundle(for: type(of: self))
-        if let path: String = bundle.path(forResource: "LeaderboardResponse", ofType: "json") {
-            let url: URL = URL(fileURLWithPath: path)
-            
-            do {
-                let simulatedJsonData: Data = try Data(contentsOf: url)
-                let response = try JSONDecoder().decode(LeaderboardResponse.self, from: simulatedJsonData)
-                
-                print("LeaderboardResponse: \(response)")
-                
-            } catch {
-                print("Error thrown loading trends data from JSON: \(error)")
-            }
-        } else {
-            print("could not load JSON data")
-        }
+        // loadLeaderboardDataFromJson()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

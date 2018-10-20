@@ -18,7 +18,7 @@ class WorkoutsViewController: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
         
-        // Make the API call to get available workouts!
+        // Make API call to get available workouts
         RequestManager.shared.getWorkouts(workoutArrray: { [weak self] workoutArray in
             self?.workouts = workoutArray
             self?.tableView.reloadData()
@@ -40,7 +40,6 @@ class WorkoutsViewController: UITableViewController {
         return workouts.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! WorkoutCell
         cell.configureWith(workout: workouts[indexPath.row])
@@ -56,7 +55,7 @@ class WorkoutsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("workoutID: \(workouts[indexPath.row].id)")
-        let leaderboardVC = LeaderBoardViewController()
+        let leaderboardVC = LeaderBoardViewController(workoutId: workouts[indexPath.row].id)
         self.navigationController?.pushViewController(leaderboardVC, animated: true)
     }
 }

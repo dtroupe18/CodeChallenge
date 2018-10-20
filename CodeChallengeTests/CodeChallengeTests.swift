@@ -31,14 +31,14 @@ class CodeChallengeTests: XCTestCase {
         }
     }
     
-    private func loadDataFromJson() {
+    private func loadWorkoutDataFromJson() {
         let bundle: Bundle = Bundle(for: type(of: self))
         if let path: String = bundle.path(forResource: "ClassesResponse", ofType: "json") {
             let url: URL = URL(fileURLWithPath: path)
             
             do {
                 let simulatedJsonData: Data = try Data(contentsOf: url)
-                let workouts = try JSONDecoder().decode(WorkoutArray.self, from: simulatedJsonData)
+                let workouts = try JSONDecoder().decode([Workout].self, from: simulatedJsonData)
                 
                 print("Workouts: \(workouts)")
                 
@@ -47,6 +47,33 @@ class CodeChallengeTests: XCTestCase {
             }
         } else {
             print("could not load JSON data")
+        }
+    }
+    
+    private func loadLeaderboardDataFromJson(fileName: String) {
+        let bundle: Bundle = Bundle(for: type(of: self))
+        if let path: String = bundle.path(forResource: fileName, ofType: "json") {
+            let url: URL = URL(fileURLWithPath: path)
+            
+            do {
+                let simulatedJsonData: Data = try Data(contentsOf: url)
+                let leaderboardResponse = try JSONDecoder().decode([LeaderboardRawResponse].self, from: simulatedJsonData)
+                
+                // Here I remove any decoded structs that have nil values were a value is required
+                var leaderboardUsers = [LeaderboardUser]()
+                for response in leaderboardResponse {
+                    if let leaderboardUser = LeaderboardUser(rawResponse: response) {
+                        leaderboardUsers.append(leaderboardUser)
+                    }
+                }
+                
+                print("leaderboardUsers: \(leaderboardUsers)")
+                
+            } catch {
+                print("\n\nError thrown loading trends data from JSON: \(error)")
+            }
+        } else {
+            print("Error: Could not load JSON data")
         }
     }
 }

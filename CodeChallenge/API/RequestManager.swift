@@ -21,7 +21,7 @@ enum EndPoint: String {
 enum RequestError: String, Error {
     case badURL = "Error URL is not working!"
     case noData = "No Data!"
-    case decodeFailed = "Failed to decode Studio Classes!"
+    case decodeFailed = "Failed to decode!"
     
     func getError(withCode code: Int) -> Error {
         return NSError(domain: "", code: code, userInfo: [NSLocalizedDescriptionKey : self.rawValue]) as Error
@@ -34,6 +34,7 @@ typealias DataCallback = (Data) -> Void
 
 // Decoded callbacks (structs)
 typealias WorkoutsCallback = ([Workout]) -> Void
+typealias LeaderboardCallback = ([LeaderboardUser]) -> Void
 
 class RequestManager {
     
@@ -104,13 +105,29 @@ class RequestManager {
         })
     }
     
-    func getLeaderboard(forWorkoutId id: Int, data: DataCallback?, onError: ErrorCallback?) {
+    func getLeaderboard(forWorkoutId id: Int, success: LeaderboardCallback?, onError: ErrorCallback?) {
         let urlAddition = "workouts/\(id)/leaderboard"
         
         makeGetRequest(urlAddition: urlAddition, onSuccess: { data in
-            
+            do {
+                // This is the raw response where the User and other values can be nil
+                let leaderboardResponse = try JSONDecoder().decode([LeaderboardRawResponse].self, from: data)
+                
+                // Here I remove any decoded structs that have nil values were a value is required
+                var leaderboardUsers = [LeaderboardUser]()
+                for response in leaderboardResponse {
+                    if let leaderboardUser = LeaderboardUser(rawResponse: response) {
+                        leaderboardUsers.append(leaderboardUser)
+                    }
+                }
+                success?(leaderboardUsers)
+            } catch {
+                onError?(error)
+                // onError?(RequestError.decodeFailed.getError(withCode: 372))
+            }
         }, onError: { error in
             print("Error: \(error)")
+            onError?(error)
         })
     }
 }
