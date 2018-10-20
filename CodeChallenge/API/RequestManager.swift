@@ -33,7 +33,7 @@ typealias ErrorCallback = (Error) -> Void
 typealias DataCallback = (Data) -> Void
 
 // Decoded callbacks (structs)
-typealias WorkoutsCallback = (WorkoutArray) -> Void
+typealias WorkoutsCallback = ([Workout]) -> Void
 
 class RequestManager {
     
@@ -101,6 +101,16 @@ class RequestManager {
             
         }, onError: { error in
             onError?(error)
+        })
+    }
+    
+    func getLeaderboard(forWorkoutId id: Int, data: DataCallback?, onError: ErrorCallback?) {
+        let urlAddition = "workouts/\(id)/leaderboard"
+        
+        makeGetRequest(urlAddition: urlAddition, onSuccess: { data in
+            
+        }, onError: { error in
+            print("Error: \(error)")
         })
     }
 }

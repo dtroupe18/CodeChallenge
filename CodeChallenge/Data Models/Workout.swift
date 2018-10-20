@@ -14,7 +14,6 @@ struct Workout: Codable {
     let name: String
     let backgroundURL: String
     let publishDate: String
-    
     let duration: String
     let difficulty: Difficulty
     let description: String?

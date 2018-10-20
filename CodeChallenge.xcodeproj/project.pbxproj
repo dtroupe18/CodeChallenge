@@ -16,9 +16,12 @@
 		55F314C9217B719700027EB6 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F314C8217B719700027EB6 /* RequestManager.swift */; };
 		55F314CE217B8E3900027EB6 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F314CD217B8E3900027EB6 /* Workout.swift */; };
 		55F314D7217BAF3A00027EB6 /* ClassesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 55F314D6217BAF3A00027EB6 /* ClassesResponse.json */; };
-		55F314DD217BB56600027EB6 /* WorkoutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F314DC217BB56600027EB6 /* WorkoutsTableViewController.swift */; };
+		55F314DD217BB56600027EB6 /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F314DC217BB56600027EB6 /* WorkoutsViewController.swift */; };
 		55F314E0217BB8CD00027EB6 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F314DF217BB8CD00027EB6 /* WorkoutCell.swift */; };
 		55F314E3217BB93E00027EB6 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F314E2217BB93E00027EB6 /* CircleImageView.swift */; };
+		55F314E5217BC96000027EB6 /* LeaderBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F314E4217BC96000027EB6 /* LeaderBoardViewController.swift */; };
+		55F314E7217BCB5500027EB6 /* LeaderboardResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 55F314E6217BCB5500027EB6 /* LeaderboardResponse.json */; };
+		55F314E9217BCC7C00027EB6 /* LeaderboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F314E8217BCC7C00027EB6 /* LeaderboardResponse.swift */; };
 		7A26D2C9DA2FF2FCFC9EDDDC /* Pods_CodeChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78FB8BF628E69F6F2324141A /* Pods_CodeChallengeTests.framework */; };
 		E2D70A8B0C17D1B8194099F4 /* Pods_CodeChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B533474CB8EBA9F474DE3BC /* Pods_CodeChallenge.framework */; };
 /* End PBXBuildFile section */
@@ -56,9 +59,12 @@
 		55F314C8217B719700027EB6 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		55F314CD217B8E3900027EB6 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		55F314D6217BAF3A00027EB6 /* ClassesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ClassesResponse.json; sourceTree = "<group>"; };
-		55F314DC217BB56600027EB6 /* WorkoutsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsTableViewController.swift; sourceTree = "<group>"; };
+		55F314DC217BB56600027EB6 /* WorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
 		55F314DF217BB8CD00027EB6 /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
 		55F314E2217BB93E00027EB6 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		55F314E4217BC96000027EB6 /* LeaderBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardViewController.swift; sourceTree = "<group>"; };
+		55F314E6217BCB5500027EB6 /* LeaderboardResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LeaderboardResponse.json; sourceTree = "<group>"; };
+		55F314E8217BCC7C00027EB6 /* LeaderboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardResponse.swift; sourceTree = "<group>"; };
 		78FB8BF628E69F6F2324141A /* Pods_CodeChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B533474CB8EBA9F474DE3BC /* Pods_CodeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEFDA0C2B2DF976C5C7945FF /* Pods-CodeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 				55F314C7217B70F300027EB6 /* API */,
 				55F314DA217BB23400027EB6 /* Supporting Files */,
 				55F314A5217A926D00027EB6 /* Info.plist */,
+				55F314E6217BCB5500027EB6 /* LeaderboardResponse.json */,
 			);
 			path = CodeChallenge;
 			sourceTree = "<group>";
@@ -166,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				55F314CD217B8E3900027EB6 /* Workout.swift */,
+				55F314E8217BCC7C00027EB6 /* LeaderboardResponse.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -173,7 +181,8 @@
 		55F314CF217B92BB00027EB6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				55F314DC217BB56600027EB6 /* WorkoutsTableViewController.swift */,
+				55F314DC217BB56600027EB6 /* WorkoutsViewController.swift */,
+				55F314E4217BC96000027EB6 /* LeaderBoardViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -349,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F314E7217BCB5500027EB6 /* LeaderboardResponse.json in Resources */,
 				55F314D7217BAF3A00027EB6 /* ClassesResponse.json in Resources */,
 				55F314A4217A926D00027EB6 /* LaunchScreen.storyboard in Resources */,
 				55F314A1217A926D00027EB6 /* Assets.xcassets in Resources */,
@@ -453,8 +463,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F314E9217BCC7C00027EB6 /* LeaderboardResponse.swift in Sources */,
+				55F314E5217BC96000027EB6 /* LeaderBoardViewController.swift in Sources */,
 				55F314C9217B719700027EB6 /* RequestManager.swift in Sources */,
-				55F314DD217BB56600027EB6 /* WorkoutsTableViewController.swift in Sources */,
+				55F314DD217BB56600027EB6 /* WorkoutsViewController.swift in Sources */,
 				55F314CE217B8E3900027EB6 /* Workout.swift in Sources */,
 				55F314E0217BB8CD00027EB6 /* WorkoutCell.swift in Sources */,
 				55F314E3217BB93E00027EB6 /* CircleImageView.swift in Sources */,

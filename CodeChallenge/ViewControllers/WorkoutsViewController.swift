@@ -8,9 +8,9 @@
 
 import UIKit
 
-class WorkoutsTableViewController: UITableViewController {
+class WorkoutsViewController: UITableViewController {
     
-    var workouts = [Workout]()
+    private var workouts = [Workout]()
     
     private final let cellIdentifier: String = "workoutCell"
     
@@ -52,5 +52,11 @@ class WorkoutsTableViewController: UITableViewController {
         if let workoutCell = cell as? WorkoutCell {
             workoutCell.show()
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("workoutID: \(workouts[indexPath.row].id)")
+        let leaderboardVC = LeaderBoardViewController()
+        self.navigationController?.pushViewController(leaderboardVC, animated: true)
     }
 }
