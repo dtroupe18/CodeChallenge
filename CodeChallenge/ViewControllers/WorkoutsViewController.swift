@@ -58,4 +58,7 @@ class WorkoutsViewController: UITableViewController {
         let leaderboardVC = LeaderBoardViewController(workoutId: workouts[indexPath.row].id)
         self.navigationController?.pushViewController(leaderboardVC, animated: true)
     }
+    
+    
+    // TEST comment
 }
