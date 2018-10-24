@@ -25,6 +25,27 @@ class WorkoutsViewController: UITableViewController {
         }, onError: { error in
             print("error: \(error.localizedDescription)")
         })
+        
+        // loadWorkoutDataFromJson()
+    }
+    
+    private func loadWorkoutDataFromJson() {
+        let bundle: Bundle = Bundle(for: type(of: self))
+        if let path: String = bundle.path(forResource: "ClassesResponse", ofType: "json") {
+            let url: URL = URL(fileURLWithPath: path)
+            
+            do {
+                let simulatedJsonData: Data = try Data(contentsOf: url)
+                let workouts = try JSONDecoder().decode([WorkoutRawResponse].self, from: simulatedJsonData)
+                
+                print("Workouts: \(workouts)")
+                
+            } catch {
+                print("Error thrown loading trends data from JSON: \(error)")
+            }
+        } else {
+            print("could not load JSON data")
+        }
     }
     
     override func viewDidLoad() {
@@ -58,7 +79,4 @@ class WorkoutsViewController: UITableViewController {
         let leaderboardVC = LeaderBoardViewController(workoutId: workouts[indexPath.row].id)
         self.navigationController?.pushViewController(leaderboardVC, animated: true)
     }
-    
-    
-    // TEST comment
 }

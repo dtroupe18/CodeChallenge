@@ -1,0 +1,472 @@
+[
+    {
+        "id": 10613,
+        "instructor_id": 2,
+        "audio_id": 10534,
+        "name": "15 Min. EMOM",
+        "background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/squatsculpt-se.jpg",
+        "publish_date": "2018-10-24T10:55:00Z",
+        "duration": "00:15:00",
+        "difficulty": "U",
+        "description": null,
+        "is_welcome_run": false,
+        "type": "I",
+        "music_genre": null,
+        "equipment": "T",
+        "users_took": 6,
+        "instructor": {
+            "id": 2,
+            "name": "Justin Koodish",
+            "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/justin-avatar.jpg"
+        },
+        "audio": {
+            "id": 10534,
+            "name": "15 min EMOM",
+            "url": "http://d5zkvy4kn72kp.cloudfront.net/justin-emom/index.m3u8"
+        },
+        "top_users": [
+            {
+                "id": 21,
+                "avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/crediblehulk.jpg"
+            },
+            {
+                "id": 20,
+                "avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/ifoundnemo.jpg"
+            },
+            {
+                "id": 19,
+                "avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/namaste-1.jpg"
+            },
+            {
+                "id": 18,
+                "avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/laxrunner.jpg"
+            }
+        ],
+        "workout_session": null,
+        "weights": null,
+        "is_bookmarked": false
+    },
+    {
+        "id": 10606,
+        "instructor_id": 15,
+        "audio_id": 10527,
+        "name": "HIIT N Run 12",
+        "background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/hiitnrunFINAL-se.jpg",
+        "publish_date": "2018-10-24T10:05:00Z",
+        "duration": "00:30:00",
+        "difficulty": "I",
+        "description": null,
+        "is_welcome_run": false,
+        "type": "I",
+        "music_genre": null,
+        "equipment": "T",
+        "users_took": 6,
+        "instructor": {
+            "id": 15,
+            "name": "Emma Jane",
+            "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/emma-avatar.jpg"
+        },
+        "audio": {
+            "id": 10527,
+            "name": "HIIT N Run 12",
+            "url": "http://d5zkvy4kn72kp.cloudfront.net/emma-hiitnrun12/index.m3u8"
+        },
+        "top_users": [
+            {
+                "id": 21,
+                "avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/crediblehulk.jpg"
+            },
+            {
+                "id": 20,
+                "avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/ifoundnemo.jpg"
+            },
+            {
+                "id": 19,
+                "avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/namaste-1.jpg"
+            },
+            {
+                "id": 18,
+                "avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/laxrunner.jpg"
+            }
+        ],
+        "workout_session": null,
+        "weights": null,
+        "is_bookmarked": false
+    },
+    {
+        "id": 10602,
+        "instructor_id": 2,
+        "audio_id": 10523,
+        "name": "Rock Nation 4",
+        "background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/guitaronfirea-se.jpg",
+        "publish_date": "2018-10-23T22:05:00Z",
+        "duration": "00:30:00",
+        "difficulty": "I",
+        "description": null,
+        "is_welcome_run": false,
+        "type": "I",
+        "music_genre": "R",
+        "equipment": "T",
+        "users_took": 6,
+        "instructor": {
+            "id": 2,
+            "name": "Justin Koodish",
+            "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/justin-avatar.jpg"
+        },
+        "audio": {
+            "id": 10523,
+            "name": "Rock Nation 4",
+            "url": "http://d5zkvy4kn72kp.cloudfront.net/justin-rocknation4/index.m3u8"
+        },
+        "top_users": [
+            {
+                "id": 21,
+                "avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/crediblehulk.jpg"
+            },
+            {
+                "id": 20,
+                "avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/ifoundnemo.jpg"
+            },
+            {
+                "id": 19,
+                "avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/namaste-1.jpg"
+            },
+            {
+                "id": 18,
+                "avatar_url": "http://d2bj66ew3qe66r.cloudfront.net/avatars/laxrunner.jpg"
+            }
+        ],
+        "workout_session": null,
+        "weights": null,
+        "is_bookmarked": false
+    },
+    {
+        "id": 10604,
+        "instructor_id": 14,
+        "audio_id": 10525,
+        "name": "HIINDURANCE Season 2 Ep. 2",
+        "background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/hiinduranceseason2option3-se.jpg",
+        "publish_date": "2018-10-23T10:05:00Z",
+        "duration": "00:30:00",
+        "difficulty": "I",
+        "description": null,
+        "is_welcome_run": false,
+        "type": "I",
+        "music_genre": null,
+        "equipment": "T",
+        "users_took": 16,
+        "instructor": {
+            "id": 14,
+            "name": "Aaron Albert",
+            "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/aaron-avatar-318.jpg"
+        },
+        "audio": {
+            "id": 10525,
+            "name": "HIINDURANCE S2 Episode 2",
+            "url": "http://d5zkvy4kn72kp.cloudfront.net/aaron-hiindurances2e2/index.m3u8"
+        },
+        "top_users": [
+            {
+                "id": 85145,
+                "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/004.jpg"
+            },
+            {
+                "id": 77011,
+                "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/005.jpg"
+            },
+            {
+                "id": 56620,
+                "avatar_url": "https://graph.facebook.com/10216478446343028/picture?type=large"
+            },
+            {
+                "id": 21799,
+                "avatar_url": "https://graph.facebook.com/10213546403686427/picture?type=large"
+            }
+        ],
+        "workout_session": null,
+        "weights": null,
+        "is_bookmarked": false
+    },
+    {
+        "id": 10600,
+        "instructor_id": 11,
+        "audio_id": 10521,
+        "name": "HIIT IT 40",
+        "background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/HIITit-se.jpg",
+        "publish_date": "2018-10-22T22:05:00Z",
+        "duration": "00:45:00",
+        "difficulty": "I",
+        "description": null,
+        "is_welcome_run": false,
+        "type": "I",
+        "music_genre": null,
+        "equipment": "T",
+        "users_took": 26,
+        "instructor": {
+            "id": 11,
+            "name": "Lisa Niren",
+            "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/lisa-avatar-318.jpg"
+        },
+        "audio": {
+            "id": 10521,
+            "name": "HIIT IT 40",
+            "url": "http://d5zkvy4kn72kp.cloudfront.net/lisa-hiitit40/index.m3u8"
+        },
+        "top_users": [
+            {
+                "id": 85876,
+                "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/032.jpg"
+            },
+            {
+                "id": 85222,
+                "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/012.jpg"
+            },
+            {
+                "id": 83672,
+                "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/028.jpg"
+            },
+            {
+                "id": 82105,
+                "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/006.jpg"
+            }
+        ],
+        "workout_session": null,
+        "weights": null,
+        "is_bookmarked": false
+    },
+    {
+        "id": 10599,
+        "instructor_id": 7,
+        "audio_id": 10520,
+        "name": "Step It Up 4",
+        "background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/rager2-se.jpg",
+        "publish_date": "2018-10-22T10:05:00Z",
+        "duration": "00:20:00",
+        "difficulty": "B",
+        "description": null,
+        "is_welcome_run": false,
+        "type": "W",
+        "music_genre": null,
+        "equipment": "T",
+        "users_took": 17,
+        "instructor": {
+            "id": 7,
+            "name": "Veezy",
+            "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/veezy-avatar-318.jpg"
+        },
+        "audio": {
+            "id": 10520,
+            "name": "Step It Up 4",
+            "url": "http://d5zkvy4kn72kp.cloudfront.net/vj-stepitup4/index.m3u8"
+        },
+        "top_users": [
+            {
+                "id": 83889,
+                "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/001.jpg"
+            },
+            {
+                "id": 82098,
+                "avatar_url": "https://graph.facebook.com/2390674427625818/picture?type=large"
+            },
+            {
+                "id": 63583,
+                "avatar_url": "https://graph.facebook.com/10215071701660025/picture?type=large"
+            },
+            {
+                "id": 63196,
+                "avatar_url": "https://graph.facebook.com/10211770614077819/picture?type=large"
+            }
+        ],
+        "workout_session": null,
+        "weights": null,
+        "is_bookmarked": false
+    },
+    {
+        "id": 10596,
+        "instructor_id": 9,
+        "audio_id": 10517,
+        "name": "Outdoor",
+        "background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/outdooradamoctober-se.jpg",
+        "publish_date": "2018-10-21T14:05:00Z",
+        "duration": "00:30:00",
+        "difficulty": "U",
+        "description": null,
+        "is_welcome_run": false,
+        "type": "I",
+        "music_genre": null,
+        "equipment": "O",
+        "users_took": 15,
+        "instructor": {
+            "id": 9,
+            "name": "Adam Wasserman",
+            "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/adam-avatar-318.jpg"
+        },
+        "audio": {
+            "id": 10517,
+            "name": "Outdoor",
+            "url": "http://d5zkvy4kn72kp.cloudfront.net/adam-outdoor831/index.m3u8"
+        },
+        "top_users": [
+            {
+                "id": 61944,
+                "avatar_url": "https://graph.facebook.com/10217356552371923/picture?type=large"
+            },
+            {
+                "id": 56457,
+                "avatar_url": "https://graph.facebook.com/10160405474065029/picture?type=large"
+            },
+            {
+                "id": 37801,
+                "avatar_url": "https://graph.facebook.com/10214689120128975/picture?type=large"
+            },
+            {
+                "id": 37145,
+                "avatar_url": "https://graph.facebook.com/10216276165319247/picture?type=large"
+            }
+        ],
+        "workout_session": null,
+        "weights": null,
+        "is_bookmarked": false
+    },
+    {
+        "id": 10597,
+        "instructor_id": 5,
+        "audio_id": 10518,
+        "name": "Booty Blast 5",
+        "background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/bootyblastshelly-se.jpg",
+        "publish_date": "2018-10-21T10:05:00Z",
+        "duration": "00:30:00",
+        "difficulty": "I",
+        "description": null,
+        "is_welcome_run": false,
+        "type": "E",
+        "music_genre": null,
+        "equipment": "T",
+        "users_took": 11,
+        "instructor": {
+            "id": 5,
+            "name": "Shelly Ramoni",
+            "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/shelly-avatar-318.jpg"
+        },
+        "audio": {
+            "id": 10518,
+            "name": "Booty Blast 5",
+            "url": "http://d5zkvy4kn72kp.cloudfront.net/shelly-bootblast5/index.m3u8"
+        },
+        "top_users": [
+            {
+                "id": 83966,
+                "avatar_url": "https://graph.facebook.com/10213648681111032/picture?type=large"
+            },
+            {
+                "id": 78982,
+                "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/008.jpg"
+            },
+            {
+                "id": 67850,
+                "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/024.jpg"
+            },
+            {
+                "id": 24742,
+                "avatar_url": "https://graph.facebook.com/10156260165946306/picture?type=large"
+            }
+        ],
+        "workout_session": null,
+        "weights": null,
+        "is_bookmarked": false
+    },
+    {
+        "id": 10595,
+        "instructor_id": 13,
+        "audio_id": 10516,
+        "name": "SHREDamill",
+        "background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/shredmill2-se.jpg",
+        "publish_date": "2018-10-20T14:05:00Z",
+        "duration": "00:45:00",
+        "difficulty": "I",
+        "description": null,
+        "is_welcome_run": false,
+        "type": "I",
+        "music_genre": null,
+        "equipment": "T",
+        "users_took": 25,
+        "instructor": {
+            "id": 13,
+            "name": "Mike Press",
+            "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/mike-avatar-318.jpg"
+        },
+        "audio": {
+            "id": 10516,
+            "name": "SHREDamill",
+            "url": "http://d5zkvy4kn72kp.cloudfront.net/mike-shredamill/index.m3u8"
+        },
+        "top_users": [
+            {
+                "id": 85739,
+                "avatar_url": "https://graph.facebook.com/10214703162947650/picture?type=large"
+            },
+            {
+                "id": 85653,
+                "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/023.jpg"
+            },
+            {
+                "id": 80777,
+                "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/029.jpg"
+            },
+            {
+                "id": 77213,
+                "avatar_url": "https://graph.facebook.com/10103184816783574/picture?type=large"
+            }
+        ],
+        "workout_session": null,
+        "weights": null,
+        "is_bookmarked": false
+    },
+    {
+        "id": 10594,
+        "instructor_id": 15,
+        "audio_id": 10515,
+        "name": "Sprint-erval 1",
+        "background_url": "http://d2bj66ew3qe66r.cloudfront.net/backgrounds/sprinterval-se.jpg",
+        "publish_date": "2018-10-20T10:05:00Z",
+        "duration": "00:20:00",
+        "difficulty": "I",
+        "description": null,
+        "is_welcome_run": false,
+        "type": "S",
+        "music_genre": null,
+        "equipment": "T",
+        "users_took": 39,
+        "instructor": {
+            "id": 15,
+            "name": "Emma Jane",
+            "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/emma-avatar.jpg"
+        },
+        "audio": {
+            "id": 10515,
+            "name": "Sprint-erval 1",
+            "url": "http://d5zkvy4kn72kp.cloudfront.net/emma-sprinterval1/index.m3u8"
+        },
+        "top_users": [
+            {
+                "id": 85653,
+                "avatar_url": "https://d2bj66ew3qe66r.cloudfront.net/avatars/default/023.jpg"
+            },
+            {
+                "id": 83920,
+                "avatar_url": "https://graph.facebook.com/10100327455588934/picture?type=large"
+            },
+            {
+                "id": 78860,
+                "avatar_url": "https://graph.facebook.com/10217169526928250/picture?type=large"
+            },
+            {
+                "id": 77344,
+                "avatar_url": "https://graph.facebook.com/10214326931821867/picture?type=large"
+            }
+        ],
+        "workout_session": null,
+        "weights": null,
+        "is_bookmarked": false
+    }
+]

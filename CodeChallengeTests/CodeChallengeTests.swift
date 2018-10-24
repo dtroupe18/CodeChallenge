@@ -19,9 +19,50 @@ class CodeChallengeTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTimeIntervalNormalization() {
+       let simulatedRawMetrics = loadSampleMetricsFromJson(fileName: "SampleMetrics1")
+        
+        var allMultipleOfFive: Bool = true
+        var errorCount: Int = 0
+        for metric in simulatedRawMetrics {
+            // Check that all intervals were properly rounded
+            
+            if metric.timeInterval % 5 != 0 {
+                allMultipleOfFive = false
+                errorCount += 1
+            }
+        }
+        XCTAssertTrue(allMultipleOfFive, "Not all time intervals were correctly rounded!")
+        XCTAssertTrue(errorCount == 0, "Number of errors: \(errorCount)")
+    }
+    
+    private func loadSampleMetricsFromJson(fileName: String) -> [RawMetric] {
+        let bundle: Bundle = Bundle(for: type(of: self))
+        if let path: String = bundle.path(forResource: fileName, ofType: "json") {
+            let url: URL = URL(fileURLWithPath: path)
+            
+            do {
+                let simulatedJsonData: Data = try Data(contentsOf: url)
+                let rawMetrics = try JSONDecoder().decode([RawMetric].self, from: simulatedJsonData)
+                
+                // Remove any metrics that are missing required values
+                let filtered = rawMetrics.filter { $0.timeInterval != -1 && $0.type != "" && $0.workoutSessionID != -1 && $0.value != ""}
+                
+                var normalized = [RawMetric]()
+                for var rawMetric in filtered {
+                    rawMetric.normalizeTimeInterval()
+                    normalized.append(rawMetric)
+                }
+                return normalized
+                
+            } catch {
+                print("\n\nError thrown loading metirc data from JSON: \(error)")
+                return []
+            }
+        } else {
+            print("Error: Could not load JSON data")
+            return []
+        }
     }
 
     func testPerformanceExample() {

@@ -34,7 +34,8 @@ typealias DataCallback = (Data) -> Void
 
 // Decoded callbacks (structs)
 typealias WorkoutsCallback = ([Workout]) -> Void
-typealias LeaderboardCallback = ([LeaderboardUser]) -> Void
+typealias LeaderboardUserCallback = ([LeaderboardUser]) -> Void
+typealias LeaderboardMetricsCallback = ([[Metric]]) -> Void
 
 class RequestManager {
     
@@ -94,8 +95,15 @@ class RequestManager {
         makeGetRequest(urlAddition: EndPoint.workoutDashboard.rawValue, onSuccess: { data in
             let decoder = JSONDecoder()
             do {
-                let workouts = try decoder.decode([Workout].self, from: data)
-                workoutArrray?(workouts)
+                let workouts = try decoder.decode([WorkoutRawResponse].self, from: data)
+                var properWorkouts = [Workout]()
+                
+                for workout in workouts {
+                    if let properWorkout = Workout(response: workout) {
+                        properWorkouts.append(properWorkout)
+                    }
+                }
+                workoutArrray?(properWorkouts)
             } catch {
                 onError?(RequestError.decodeFailed.getError(withCode: 372))
             }
@@ -105,7 +113,7 @@ class RequestManager {
         })
     }
     
-    func getLeaderboard(forWorkoutId id: Int, success: LeaderboardCallback?, onError: ErrorCallback?) {
+    func getLeaderboard(forWorkoutId id: Int, success: LeaderboardUserCallback?, onError: ErrorCallback?) {
         let urlAddition = "workouts/\(id)/leaderboard"
         
         makeGetRequest(urlAddition: urlAddition, onSuccess: { data in
@@ -129,6 +137,39 @@ class RequestManager {
             print("Error: \(error)")
             onError?(error)
         })
+    }
+    
+    func fetchLeaderBoardMetrics(fromUrls urls: [URL], completionHandler: LeaderboardMetricsCallback?) {
+        
+        var leaderboardMetrics = [[Metric]]() // array of arrays with each users metrics 
+        let group = DispatchGroup()
+        let serialQueue = DispatchQueue(label: "serialQueue")
+        
+        urls.forEach { url in
+            group.enter() // add download to this process
+            URLSession(configuration: .default).dataTask(with: url) { (data, response, error) in
+                
+                guard let data = data, error == nil else { group.leave(); return }
+                
+                do {
+                    let rawMetrics = try JSONDecoder().decode([RawMetric].self, from: data)
+                    let metrics = LeaderboardHelper.shared.cleanUserMetrics(singleUsersMetrics: rawMetrics)
+                    
+                    serialQueue.async {
+                        leaderboardMetrics.append(metrics)
+                        group.leave()
+                    }
+                } catch {
+                    print("Decode Error: \(error)")
+                    group.leave()
+                }
+            }.resume()
+        }
+        
+        group.notify(queue: .main) {
+            // this will be executed when for each group.enter() call, a group.leave() has been executed
+            completionHandler?(leaderboardMetrics)
+        }
     }
 }
     

@@ -31,8 +31,30 @@ class LeaderBoardViewController: UITableViewController {
         RequestManager.shared.getLeaderboard(forWorkoutId: workoutId, success: { [weak self] leaderBoardUserArray in
             self?.leaderboardUsers = leaderBoardUserArray
             self?.tableView.reloadData()
+            self?.fetchLeaderBoardMetrics()
         }, onError: { error in
             print("Leaderboard Error: \(error.localizedDescription)")
+        })
+    }
+    
+    private func fetchLeaderBoardMetrics() {
+        let start = DispatchTime.now() // start time
+        var urls = [URL]()
+        for user in leaderboardUsers {
+            if let url = URL(string: user.logURLPath) {
+                urls.append(url)
+            }
+        }
+        
+        RequestManager.shared.fetchLeaderBoardMetrics(fromUrls: urls, completionHandler: { arrayOfArrayMetrics in
+            for x in arrayOfArrayMetrics {
+                print(x)
+            }
+            let end = DispatchTime.now()
+            let nanoTime = end.uptimeNanoseconds - start.uptimeNanoseconds // <<<<< Difference in nano seconds (UInt64)
+            let timeInterval = Double(nanoTime) / 1_000_000_000 // Technically could overflow for long running tests
+            
+            print("Time to download and clean leaderboard metrics: \(timeInterval) seconds")
         })
     }
     
@@ -40,6 +62,7 @@ class LeaderBoardViewController: UITableViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         // loadLeaderboardDataFromJson()
+        // let metrics = loadSampleMetricsFromJson(fileName: "SampleMetrics1")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,5 +77,50 @@ class LeaderBoardViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.textLabel?.text = leaderboardUsers[indexPath.row].user.username
         return cell
+    }
+    
+    private func loadLeaderboardDataFromJson(fileName: String) {
+        let bundle: Bundle = Bundle(for: type(of: self))
+        if let path: String = bundle.path(forResource: fileName, ofType: "json") {
+            let url: URL = URL(fileURLWithPath: path)
+            
+            do {
+                let simulatedJsonData: Data = try Data(contentsOf: url)
+                let leaderboardResponse = try JSONDecoder().decode([LeaderboardRawResponse].self, from: simulatedJsonData)
+                
+                // Here I remove any decoded structs that have nil values were a value is required
+                var leaderboardUsers = [LeaderboardUser]()
+                for response in leaderboardResponse {
+                    if let leaderboardUser = LeaderboardUser(rawResponse: response) {
+                        leaderboardUsers.append(leaderboardUser)
+                    }
+                }
+                print("leaderboardUsers: \(leaderboardUsers)")
+                
+            } catch {
+                print("\n\nError thrown loading leaderboard data from JSON: \(error)")
+            }
+        } else {
+            print("Error: Could not load JSON data")
+        }
+    }
+    
+    private func loadSampleMetricsFromJson(fileName: String) -> [Metric] {
+        let bundle: Bundle = Bundle(for: type(of: self))
+        if let path: String = bundle.path(forResource: fileName, ofType: "json") {
+            let url: URL = URL(fileURLWithPath: path)
+            
+            do {
+                let simulatedJsonData: Data = try Data(contentsOf: url)
+                let rawMetrics = try JSONDecoder().decode([RawMetric].self, from: simulatedJsonData)
+                return LeaderboardHelper.shared.cleanUserMetrics(singleUsersMetrics: rawMetrics)
+            } catch {
+                print("\n\nError thrown loading metirc data from JSON: \(error)")
+                return []
+            }
+        } else {
+            print("Error: Could not load JSON data")
+            return []
+        }
     }
 }
