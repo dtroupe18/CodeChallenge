@@ -11,8 +11,13 @@ import UIKit
 class LeaderBoardViewController: UITableViewController {
     
     private var leaderboardUsers = [LeaderboardUser]()
+    private var leaderboard = [Int: [Metric]]()
+    private var currentLeaderboard = [Metric]() // leaderboard at a particular second
+    private var leaderboardTimer: Timer?
+    
     private final let cellIdentifier: String = "leaderboardCell"
     private let workoutId: Int
+    private var currentTimeInterval: Int = 0
     
     init(workoutId: Int) {
         self.workoutId = workoutId
@@ -37,6 +42,19 @@ class LeaderBoardViewController: UITableViewController {
         })
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        leaderboardTimer?.invalidate()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.register(LeaderboardCell.self, forCellReuseIdentifier: cellIdentifier)
+        // loadLeaderboardDataFromJson()
+        // let metrics = loadSampleMetricsFromJson(fileName: "SampleMetrics1")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(startLeaderboard))
+    }
+    
     private func fetchLeaderBoardMetrics() {
         let start = DispatchTime.now() // start time
         var urls = [URL]()
@@ -46,23 +64,33 @@ class LeaderBoardViewController: UITableViewController {
             }
         }
         
-        RequestManager.shared.fetchLeaderBoardMetrics(fromUrls: urls, completionHandler: { arrayOfArrayMetrics in
-            for x in arrayOfArrayMetrics {
-                print(x)
-            }
+        RequestManager.shared.fetchLeaderBoardMetrics(fromUrls: urls, completionHandler: { [weak self] leaderboard in
+            //            var timeKeys = leaderboard.keys
+            //            let sortedTimeKeys = timeKeys.sorted { $0 < $1 }
+            //            print(sortedTimeKeys)
+            //
+            //            if let firstKey = sortedTimeKeys.first {
+            //                print(leaderboard[firstKey])
+            //            }
+            self?.leaderboard = leaderboard
             let end = DispatchTime.now()
-            let nanoTime = end.uptimeNanoseconds - start.uptimeNanoseconds // <<<<< Difference in nano seconds (UInt64)
-            let timeInterval = Double(nanoTime) / 1_000_000_000 // Technically could overflow for long running tests
+            let nanoTime = end.uptimeNanoseconds - start.uptimeNanoseconds
+            let timeInterval = Double(nanoTime) / 1_000_000_000
             
             print("Time to download and clean leaderboard metrics: \(timeInterval) seconds")
         })
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-        // loadLeaderboardDataFromJson()
-        // let metrics = loadSampleMetricsFromJson(fileName: "SampleMetrics1")
+    @objc private func startLeaderboard() {
+        print("starting leaderboard")
+        leaderboardTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(updateLeaderboard), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func updateLeaderboard() {
+        print("updating leaderboard!")
+        currentTimeInterval += 5
+        print("currentTimeInterval: \(currentTimeInterval)")
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,11 +102,13 @@ class LeaderBoardViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = leaderboardUsers[indexPath.row].user.username
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! LeaderboardCell
+        let row = indexPath.row
+        cell.configure(with: leaderboardUsers[row], rank: row) // users start in arbitrary order
         return cell
     }
     
+    // Marker: Load simulated data
     private func loadLeaderboardDataFromJson(fileName: String) {
         let bundle: Bundle = Bundle(for: type(of: self))
         if let path: String = bundle.path(forResource: fileName, ofType: "json") {

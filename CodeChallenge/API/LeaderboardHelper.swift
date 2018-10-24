@@ -40,4 +40,22 @@ class LeaderboardHelper {
         }
         return betterMetrics
     }
+    
+    func createLeaderboardDictionary(leaderboardMetrics: [[Metric]]) -> [Int: [Metric]] {
+        // Turn the leaderboard into a dictionary so that is can be efficently queried.
+        // key = time interval and the value is all users metrics at that second
+        var leaderboard = [Int: [Metric]]()
+        
+        for userMetrics in leaderboardMetrics {
+            for metric in userMetrics {
+                if var metricArray = leaderboard[metric.timeInterval] {
+                    metricArray.append(metric)
+                    leaderboard[metric.timeInterval] = metricArray
+                } else {
+                    leaderboard[metric.timeInterval] = [metric]
+                }
+            }
+        }
+        return leaderboard
+    }
 }

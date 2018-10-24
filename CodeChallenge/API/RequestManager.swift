@@ -35,7 +35,7 @@ typealias DataCallback = (Data) -> Void
 // Decoded callbacks (structs)
 typealias WorkoutsCallback = ([Workout]) -> Void
 typealias LeaderboardUserCallback = ([LeaderboardUser]) -> Void
-typealias LeaderboardMetricsCallback = ([[Metric]]) -> Void
+typealias LeaderboardCallback = ([Int: [Metric]]) -> Void
 
 class RequestManager {
     
@@ -139,7 +139,7 @@ class RequestManager {
         })
     }
     
-    func fetchLeaderBoardMetrics(fromUrls urls: [URL], completionHandler: LeaderboardMetricsCallback?) {
+    func fetchLeaderBoardMetrics(fromUrls urls: [URL], completionHandler: LeaderboardCallback?) {
         
         var leaderboardMetrics = [[Metric]]() // array of arrays with each users metrics 
         let group = DispatchGroup()
@@ -154,7 +154,7 @@ class RequestManager {
                 do {
                     let rawMetrics = try JSONDecoder().decode([RawMetric].self, from: data)
                     let metrics = LeaderboardHelper.shared.cleanUserMetrics(singleUsersMetrics: rawMetrics)
-                    
+                
                     serialQueue.async {
                         leaderboardMetrics.append(metrics)
                         group.leave()
@@ -168,7 +168,8 @@ class RequestManager {
         
         group.notify(queue: .main) {
             // this will be executed when for each group.enter() call, a group.leave() has been executed
-            completionHandler?(leaderboardMetrics)
+            let leaderboard = LeaderboardHelper.shared.createLeaderboardDictionary(leaderboardMetrics: leaderboardMetrics)
+            completionHandler?(leaderboard)
         }
     }
 }
