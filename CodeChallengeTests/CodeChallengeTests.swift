@@ -79,7 +79,7 @@ class CodeChallengeTests: XCTestCase {
             
             do {
                 let simulatedJsonData: Data = try Data(contentsOf: url)
-                let workouts = try JSONDecoder().decode([Workout].self, from: simulatedJsonData)
+                let workouts = try JSONDecoder().decode([WorkoutRawResponse].self, from: simulatedJsonData)
                 
                 print("Workouts: \(workouts)")
                 
