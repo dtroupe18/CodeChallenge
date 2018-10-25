@@ -34,7 +34,7 @@ typealias DataCallback = (Data) -> Void
 
 // Decoded callbacks (structs)
 typealias WorkoutsCallback = ([Workout]) -> Void
-typealias LeaderboardUserCallback = ([LeaderboardUser]) -> Void
+typealias LeaderboardEntryCallback = ([LeaderboardEntry]) -> Void
 typealias LeaderboardCallback = ([Int: [Metric]]) -> Void
 
 class RequestManager {
@@ -113,7 +113,7 @@ class RequestManager {
         })
     }
     
-    func getLeaderboard(forWorkoutId id: Int, success: LeaderboardUserCallback?, onError: ErrorCallback?) {
+    func getLeaderboardEntries(forWorkoutId id: Int, success: LeaderboardEntryCallback?, onError: ErrorCallback?) {
         let urlAddition = "workouts/\(id)/leaderboard"
         
         makeGetRequest(urlAddition: urlAddition, onSuccess: { data in
@@ -122,9 +122,9 @@ class RequestManager {
                 let leaderboardResponse = try JSONDecoder().decode([LeaderboardRawResponse].self, from: data)
                 
                 // Here I remove any decoded structs that have nil values were a value is required
-                var leaderboardUsers = [LeaderboardUser]()
+                var leaderboardUsers = [LeaderboardEntry]()
                 for response in leaderboardResponse {
-                    if let leaderboardUser = LeaderboardUser(rawResponse: response) {
+                    if let leaderboardUser = LeaderboardEntry(rawResponse: response) {
                         leaderboardUsers.append(leaderboardUser)
                     }
                 }
@@ -150,10 +150,19 @@ class RequestManager {
             URLSession(configuration: .default).dataTask(with: url) { (data, response, error) in
                 
                 guard let data = data, error == nil else { group.leave(); return }
-                
+                var workoutID: String? // Using this because a lot of workouts have real data, but the sessionID is 0 for some reason
                 do {
                     let rawMetrics = try JSONDecoder().decode([RawMetric].self, from: data)
-                    let metrics = LeaderboardHelper.shared.cleanUserMetrics(singleUsersMetrics: rawMetrics)
+                    let urlParts = url.absoluteString.components(separatedBy: "/")
+                    if let lastUrlPart = urlParts.last {
+                        let split = lastUrlPart.components(separatedBy: "-")
+                        if var lastSplit = split.last {
+                            lastSplit.removeLast(5)
+                            workoutID = lastSplit
+                            print("workoutID: \(workoutID ?? "")")
+                        }
+                    }
+                    let metrics = LeaderboardHelper.shared.cleanUserMetrics(singleUsersMetrics: rawMetrics, workoutID: workoutID)
                 
                     serialQueue.async {
                         leaderboardMetrics.append(metrics)

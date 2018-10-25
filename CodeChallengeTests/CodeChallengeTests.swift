@@ -101,9 +101,9 @@ class CodeChallengeTests: XCTestCase {
                 let leaderboardResponse = try JSONDecoder().decode([LeaderboardRawResponse].self, from: simulatedJsonData)
                 
                 // Here I remove any decoded structs that have nil values were a value is required
-                var leaderboardUsers = [LeaderboardUser]()
+                var leaderboardUsers = [LeaderboardEntry]()
                 for response in leaderboardResponse {
-                    if let leaderboardUser = LeaderboardUser(rawResponse: response) {
+                    if let leaderboardUser = LeaderboardEntry(rawResponse: response) {
                         leaderboardUsers.append(leaderboardUser)
                     }
                 }

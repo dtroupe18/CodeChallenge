@@ -14,8 +14,17 @@ class LeaderboardHelper {
     
     private init() {}
     
-    func cleanUserMetrics(singleUsersMetrics: [RawMetric]) -> [Metric] {
-        let filtered = singleUsersMetrics.filter { $0.timeInterval != -1 && $0.type != "" && $0.workoutSessionID != -1 && $0.value != ""}
+    func cleanUserMetrics(singleUsersMetrics: [RawMetric], workoutID: String?) -> [Metric] {
+        var filtered = singleUsersMetrics.filter { $0.timeInterval != -1 && $0.type != "" && $0.workoutSessionID != -1 && $0.value != ""}
+        
+        if !filtered.isEmpty && filtered[0].workoutSessionID == 0, let id = workoutID {
+            if let workoutNumber = Int(id) {
+                for (index, _) in filtered.enumerated() {
+                    filtered[index].workoutSessionID = workoutNumber
+                }
+            }
+        }
+        
         var normalized = [RawMetric]()
         
         for var rawMetric in filtered {

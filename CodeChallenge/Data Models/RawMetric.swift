@@ -9,7 +9,7 @@
 import Foundation
 
 struct RawMetric: Codable {
-    let workoutSessionID: Int
+    var workoutSessionID: Int // This is a var because some metrics have incorrect workoutID 0
     var timeInterval: Int
     let type: String
     let currentTimestamp: Int

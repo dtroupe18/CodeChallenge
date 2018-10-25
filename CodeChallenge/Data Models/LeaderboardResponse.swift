@@ -54,7 +54,7 @@ struct LeaderboardRawResponse: Codable {
     }
 }
 
-struct LeaderboardUser {
+struct LeaderboardEntry {
     // Optional values for the things that aren't needed for the leaderboard
     let id, workoutID, userID: Int
     let filename: String?

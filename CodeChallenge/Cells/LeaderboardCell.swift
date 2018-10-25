@@ -29,6 +29,7 @@ class LeaderboardCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        self.backgroundColor = selected ? .pink : .clear
     }
     
     func configure(with leaderboardUser: LeaderboardUser, rank: Int) {
@@ -71,12 +72,14 @@ class LeaderboardCell: UITableViewCell {
         middleStackView.rightAnchor == rightStackView.leftAnchor + 20
         middleStackView.centerYAnchor == userImageView.centerYAnchor
         
-        distanceLabel.text = "0.0 Mi"
+        if let distanceString = leaderboardUser.distance.distanceString {
+            distanceLabel.text = distanceString
+        }
         distanceLabel.numberOfLines = 1
         distanceLabel.font = UIFont.boldSystemFont(ofSize: 12)
         distanceLabel.textAlignment = .left
         
-        heartRateLabel.text = "0 BPM"
+        heartRateLabel.text = "\(leaderboardUser.heartRate.intValue) BPM"
         heartRateLabel.numberOfLines = 1
         heartRateLabel.font = UIFont.boldSystemFont(ofSize: 12)
         heartRateLabel.textAlignment = .left
@@ -88,17 +91,17 @@ class LeaderboardCell: UITableViewCell {
         rightStackView.widthAnchor == 80
         rightStackView.addArrangedSubview(distanceLabel)
         rightStackView.addArrangedSubview(heartRateLabel)
+        
+        selectionStyle = .none
     }
     
-    func update(with metric: Metric, leaderboardUser: LeaderboardUser, rank: Int) {
+    func update(with leaderboardUser: LeaderboardUser, rank: Int) {
         rankLabel.text = "#\(rank)"
         userImageView.kf.setImage(with: URL(string: leaderboardUser.user.avatarURL))
         nameLabel.text = leaderboardUser.user.username
         genderLocationLabel.text = "\(leaderboardUser.user.gender) / \(leaderboardUser.user.location)"
-        distanceLabel.text = "distance: \(metric.distance)"
-        if let heartRate = metric.heartRate {
-            heartRateLabel.text = "\(heartRate)"
-        }
+        distanceLabel.text = "distance: \(leaderboardUser.distance)"
+        heartRateLabel.text = "\(leaderboardUser.heartRate)"
     }
     
     func getGenderLocationString(user: User) -> String {
