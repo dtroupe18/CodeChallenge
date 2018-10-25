@@ -31,7 +31,7 @@ extension Double {
     
     var distanceString: String? {
         if let rounded = self.roundedThreeDecimalString {
-            return "\(rounded) Mi"
+            return "\(rounded) mi"
         } else {
            return nil
         }

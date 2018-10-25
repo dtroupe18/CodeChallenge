@@ -159,7 +159,6 @@ class RequestManager {
                         if var lastSplit = split.last {
                             lastSplit.removeLast(5)
                             workoutID = lastSplit
-                            print("workoutID: \(workoutID ?? "")")
                         }
                     }
                     let metrics = LeaderboardHelper.shared.cleanUserMetrics(singleUsersMetrics: rawMetrics, workoutID: workoutID)

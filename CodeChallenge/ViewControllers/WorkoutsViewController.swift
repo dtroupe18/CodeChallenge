@@ -75,7 +75,6 @@ class WorkoutsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("workoutID: \(workouts[indexPath.row].id)")
         let leaderboardVC = LeaderBoardViewController(workoutId: workouts[indexPath.row].id)
         self.navigationController?.pushViewController(leaderboardVC, animated: true)
     }

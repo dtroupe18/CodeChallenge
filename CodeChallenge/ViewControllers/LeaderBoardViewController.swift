@@ -102,7 +102,7 @@ class LeaderBoardViewController: UITableViewController {
     
     @objc private func startLeaderboard() {
         print("starting leaderboard")
-        leaderboardTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(updateLeaderboard), userInfo: nil, repeats: true)
+        leaderboardTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateLeaderboard), userInfo: nil, repeats: true)
     }
     
     @objc private func updateLeaderboard() {
@@ -118,20 +118,13 @@ class LeaderBoardViewController: UITableViewController {
                     }
                 }
             }
-            let sorted = leaderboardUsers.sorted { $0.distance > $1.distance } // order by distance
-            for (newIndex, user) in sorted.enumerated() {
-                if let oldIndex = leaderboardUsers.index(where: {$0 == user }) {
-                    print("newIndex: \(newIndex): oldIndex: \(oldIndex) \(user.user.username) \(user.distance) rank: \(user.rank)")
-                    leaderboardUsers[oldIndex].rank = newIndex + 1
-                    if let cell = tableView.cellForRow(at: IndexPath(row: oldIndex, section: 0)) as? LeaderboardCell {
-                        cell.update(with: leaderboardUsers[oldIndex])
-                    }
-                    moveUser(from: oldIndex, to: newIndex)
-                    
+            self.leaderboardUsers = leaderboardUsers.sorted { $0.distance > $1.distance } // order by distance
+            for (newIndex, _) in leaderboardUsers.enumerated() {
+                leaderboardUsers[newIndex].rank = newIndex + 1
+                if let cell = tableView.cellForRow(at: IndexPath(row: newIndex, section: 0)) as? LeaderboardCell {
+                    cell.update(with: leaderboardUsers[newIndex])
                 }
             }
-            print("\n")
-            self.leaderboardUsers = sorted
             // self.tableView.reloadData()
             
             if let selectedLeaderboardUser = selectedUser {
