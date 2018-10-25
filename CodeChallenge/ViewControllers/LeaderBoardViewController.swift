@@ -17,6 +17,7 @@ class LeaderBoardViewController: UITableViewController {
     private var leaderboard = [Int: [Metric]]() // TimeInterval: Ranked User Metrics
     private var currentLeaderboard = [Metric]() // leaderboard at a particular timeInterval
     private var leaderboardTimer: Timer? // Keep track of when to update the leaderboard
+    private var userScrolledLeaderboard: Bool = false
     
     private final let cellIdentifier: String = "leaderboardCell"
     private var cellHeights: [IndexPath: CGFloat] = [:]
@@ -102,7 +103,7 @@ class LeaderBoardViewController: UITableViewController {
     
     @objc private func startLeaderboard() {
         print("starting leaderboard")
-        leaderboardTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateLeaderboard), userInfo: nil, repeats: true)
+        leaderboardTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateLeaderboard), userInfo: nil, repeats: true)
     }
     
     @objc private func updateLeaderboard() {
@@ -131,13 +132,20 @@ class LeaderBoardViewController: UITableViewController {
                 // Keep that cell pink
                 if let index = leaderboardUsers.index(where: { $0 == selectedLeaderboardUser }) {
                     let indexPath = IndexPath(row: index, section: 0)
-                    self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .middle)
+                    if !userScrolledLeaderboard {
+                        // Scroll so this row is in the middle of the leaderboard
+                        self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .middle)
+                    } else {
+                        // User moved the leaderboard so we don't scroll it anymore
+                        self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+                    }
                 }
             }
         }
     }
-    
+
     private func moveUser(from oldIndex: Int, to newIndex: Int) {
+        // Not used at the current moment, but could be used in the future to animate leaderboard updates
         let oldIndexPath = IndexPath(row: oldIndex, section: 0)
         let newIndexPath = IndexPath(row: newIndex, section: 0)
         UIView.animate(withDuration: 0.5, animations: {
@@ -182,6 +190,14 @@ class LeaderBoardViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let velocity = scrollView.panGestureRecognizer.velocity(in: tableView)
+        if velocity.x != 0.0 || velocity.y != 0.0 {
+            // user scrolled the leaderboard
+            userScrolledLeaderboard = true
+        }
     }
     
     // Marker: Load simulated data
