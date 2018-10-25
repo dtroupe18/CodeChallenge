@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0732D2C6236DA9B68E998FDC /* Pods_CodeChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C40BC96208D36B4CA7A385 /* Pods_CodeChallengeUITests.framework */; };
+		554793CB218220D700C32538 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554793CA218220D700C32538 /* UIView+Extension.swift */; };
 		5599A6E5217F2385006A2B83 /* RawMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5599A6E4217F2385006A2B83 /* RawMetric.swift */; };
 		5599A6E7217F29AC006A2B83 /* SampleMetrics1.json in Resources */ = {isa = PBXBuildFile; fileRef = 5599A6E6217F29AC006A2B83 /* SampleMetrics1.json */; };
 		5599A6EA217F2FA2006A2B83 /* SampleMetrics1.json in Resources */ = {isa = PBXBuildFile; fileRef = 5599A6E9217F2FA2006A2B83 /* SampleMetrics1.json */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		445E69FA7064FCB2F1141C51 /* Pods-CodeChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeChallengeTests/Pods-CodeChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		554793CA218220D700C32538 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		5599A6E4217F2385006A2B83 /* RawMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMetric.swift; sourceTree = "<group>"; };
 		5599A6E6217F29AC006A2B83 /* SampleMetrics1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleMetrics1.json; sourceTree = "<group>"; };
 		5599A6E9217F2FA2006A2B83 /* SampleMetrics1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleMetrics1.json; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				5599A6EB217F3D49006A2B83 /* String+Extension.swift */,
 				5599A6F32181286C006A2B83 /* Double+Extension.swift */,
 				5599A6F72181DE57006A2B83 /* UIColor+Extension.swift */,
+				554793CA218220D700C32538 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				55F314E5217BC96000027EB6 /* LeaderBoardViewController.swift in Sources */,
 				55F314C9217B719700027EB6 /* RequestManager.swift in Sources */,
 				5599A6E5217F2385006A2B83 /* RawMetric.swift in Sources */,
+				554793CB218220D700C32538 /* UIView+Extension.swift in Sources */,
 				5599A6F82181DE57006A2B83 /* UIColor+Extension.swift in Sources */,
 				5599A6F6218129EE006A2B83 /* LeaderboardUser.swift in Sources */,
 				55F314DD217BB56600027EB6 /* WorkoutsViewController.swift in Sources */,
