@@ -119,13 +119,20 @@ class LeaderBoardViewController: UITableViewController {
                     }
                 }
             }
+            let sorted = leaderboardUsers.sorted { $0.distance > $1.distance } // order by distance
             self.leaderboardUsers = leaderboardUsers.sorted { $0.distance > $1.distance } // order by distance
-            for (newIndex, _) in leaderboardUsers.enumerated() {
-                leaderboardUsers[newIndex].rank = newIndex + 1
+            for (newIndex, user) in leaderboardUsers.enumerated() {
+                if let oldIndex = leaderboardUsers.index(where: {$0 == user }) {
+                    leaderboardUsers[oldIndex].rank = newIndex + 1
+                    if oldIndex != newIndex {
+                        moveUser(from: oldIndex, to: newIndex)
+                    }
+                }
                 if let cell = tableView.cellForRow(at: IndexPath(row: newIndex, section: 0)) as? LeaderboardCell {
                     cell.update(with: leaderboardUsers[newIndex])
                 }
             }
+            self.leaderboardUsers = sorted
             // self.tableView.reloadData()
             
             if let selectedLeaderboardUser = selectedUser {
@@ -148,7 +155,7 @@ class LeaderBoardViewController: UITableViewController {
         // Not used at the current moment, but could be used in the future to animate leaderboard updates
         let oldIndexPath = IndexPath(row: oldIndex, section: 0)
         let newIndexPath = IndexPath(row: newIndex, section: 0)
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.50, animations: {
             self.tableView.moveRow(at: oldIndexPath, to: newIndexPath)
         })
     }
