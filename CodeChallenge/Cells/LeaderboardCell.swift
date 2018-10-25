@@ -95,13 +95,15 @@ class LeaderboardCell: UITableViewCell {
         selectionStyle = .none
     }
     
-    func update(with leaderboardUser: LeaderboardUser, rank: Int) {
-        rankLabel.text = "#\(rank)"
+    func update(with leaderboardUser: LeaderboardUser) {
+        rankLabel.text = "#\(leaderboardUser.rank)"
         userImageView.kf.setImage(with: URL(string: leaderboardUser.user.avatarURL))
         nameLabel.text = leaderboardUser.user.username
-        genderLocationLabel.text = "\(leaderboardUser.user.gender) / \(leaderboardUser.user.location)"
-        distanceLabel.text = "distance: \(leaderboardUser.distance)"
-        heartRateLabel.text = "\(leaderboardUser.heartRate)"
+        genderLocationLabel.text = getGenderLocationString(user: leaderboardUser.user)
+        if let distanceString = leaderboardUser.distance.distanceString {
+            distanceLabel.text = distanceString
+        }
+        heartRateLabel.text = "\(leaderboardUser.heartRate.intValue) BPM"
     }
     
     func getGenderLocationString(user: User) -> String {

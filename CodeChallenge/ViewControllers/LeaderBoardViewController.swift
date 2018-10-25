@@ -71,8 +71,8 @@ class LeaderBoardViewController: UITableViewController {
     }
     
     private func setLeaderboardUsers() {
-        for x in leaderboardEntries {
-            let user = LeaderboardUser(responseUser: x)
+        for (index, entry) in leaderboardEntries.enumerated() {
+            let user = LeaderboardUser(responseUser: entry, rank: index + 1)
             leaderboardUsers.append(user)
         }
         self.tableView.reloadData()
@@ -118,11 +118,21 @@ class LeaderBoardViewController: UITableViewController {
                     }
                 }
             }
-            self.leaderboardUsers = leaderboardUsers.sorted { $0.distance > $1.distance } // order by distance
-            for (index, user) in leaderboardUsers.enumerated() {
-                print("\(index): \(user.user.username) \(user.distance)")
+            let sorted = leaderboardUsers.sorted { $0.distance > $1.distance } // order by distance
+            for (newIndex, user) in sorted.enumerated() {
+                if let oldIndex = leaderboardUsers.index(where: {$0 == user }) {
+                    print("newIndex: \(newIndex): oldIndex: \(oldIndex) \(user.user.username) \(user.distance) rank: \(user.rank)")
+                    leaderboardUsers[oldIndex].rank = newIndex + 1
+                    if let cell = tableView.cellForRow(at: IndexPath(row: oldIndex, section: 0)) as? LeaderboardCell {
+                        cell.update(with: leaderboardUsers[oldIndex])
+                    }
+                    moveUser(from: oldIndex, to: newIndex)
+                    
+                }
             }
-            self.tableView.reloadData()
+            print("\n")
+            self.leaderboardUsers = sorted
+            // self.tableView.reloadData()
             
             if let selectedLeaderboardUser = selectedUser {
                 // Keep that cell pink
@@ -132,6 +142,14 @@ class LeaderBoardViewController: UITableViewController {
                 }
             }
         }
+    }
+    
+    private func moveUser(from oldIndex: Int, to newIndex: Int) {
+        let oldIndexPath = IndexPath(row: oldIndex, section: 0)
+        let newIndexPath = IndexPath(row: newIndex, section: 0)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.tableView.moveRow(at: oldIndexPath, to: newIndexPath)
+        })
     }
     
     // Marker: TableView DataSource
@@ -151,7 +169,7 @@ class LeaderBoardViewController: UITableViewController {
         if !doneInitialLoad {
             cell.configure(with: user, rank: row + 1)
         } else {
-            cell.update(with: user, rank: row + 1)
+            cell.update(with: user)
         }
         return cell
     }
@@ -167,6 +185,10 @@ class LeaderBoardViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedUser = leaderboardUsers[indexPath.row]
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
     // Marker: Load simulated data
